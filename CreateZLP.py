@@ -63,13 +63,14 @@ def getdatas(machines, processing_times, sol_line_tasks, sol_line):
     return datas
 
 
-def gettraindata(name, m, n, time_low, time_high, numofloop):
+def gettraindata(name, m, n, time_low, time_high, numofloop,i=0):
     # machines is the workpiece processing sequence
         # line i is job i
         # row j is mashine j
         # means that job i's processing sequence
     # processing_time is the processing time of job i processing j
-    fzzl = open('./data/withoutsolute_log_' + name + '.txt', 'a')
+    # fzzl = open('./data/withoutsolute_log_' + name + '.txt', 'a')
+    fzzl = open('./data/ZLP20-'+str(i)+'.txt', 'a')
     datatosave = []
     a = list(range(time_low, time_high))
 
@@ -96,13 +97,14 @@ def gettraindata(name, m, n, time_low, time_high, numofloop):
 
 
 if __name__ == '__main__':
-    m = 8
-    n = 8
-    time_low = 6
-    time_high = 30
-    numofloop = 1000
+    m = 20
+    n = 20
+    time_low = 15
+    time_high = 45
+    numofloop = 2000
 
-    gettraindata('traindata_'+'m='+str(m)+'_n='+str(n) +
-                 '_timelow='+str(time_low)+'_timehight='+str(time_high)
-                 + '_numofloop='+str(numofloop), m=m, n=n, time_low=time_low,
-                 time_high=time_high, numofloop=numofloop)
+    for i in range(11):
+        gettraindata('traindata_'+'m='+str(m)+'_n='+str(n) +
+                    '_timelow='+str(time_low)+'_timehight='+str(time_high)
+                    + '_numofloop='+str(numofloop), m=m, n=n, time_low=time_low,
+                    time_high=time_high, numofloop=numofloop,i=i)

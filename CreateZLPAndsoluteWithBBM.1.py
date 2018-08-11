@@ -212,11 +212,11 @@ def gettraindata(name, m, n, time_low, time_high, numofloop):
 
 
 if __name__ == '__main__':
-    m = 8
-    n = 8
-    time_low = 6
+    m = 7
+    n = 7
+    time_low = 7
     time_high = 30
-    numofloop = 1000
+    numofloop = 2000
 
     gettraindata('traindata_'+'m='+str(m)+'_n='+str(n) +
                  '_timelow='+str(time_low)+'_timehight='+str(time_high)
